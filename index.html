@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Phương trình bậc 1</title>
+<style type="text/css">
+input[type=text] { background:#FC3; color:red; border-radius: 10px; padding-left:10px;width:200px}
+input[type=button] {background:#999; color:#FFF; border-radius: 10px;width:50px; font-weight:bold}
+</style>
+<script language="javascript">
+function Tinh(pheptinh)
+{
+	
+	a = document.f1.tA.value;
+	b = document.f1.tB.value;
+	if(a=="" || b=="")
+	{
+		alert("Bạn chưa nhập hệ số A hoặc B");
+		return;
+	}
+	if(isNaN(a) == true || isNaN(b)==true)
+	{
+		alert("A hoặc B phải nhập số");
+		return;
+	}
+	a1 = parseFloat(a);
+	b1 = parseFloat(b);
+	if(pheptinh=="/" && b1==0)
+		ketqua = "không được chia cho 0";
+	else
+		ketqua = eval(a1+pheptinh+b1);	
+		document.f1.tKQ.value = ketqua;
+}
+</script>
+</head>
+
+<body>
+<h2 align="center"> Các phép tính cơ bản</h2>
+<form name="f1" id="f1">
+<table width="300" align="center" border="0">
+	<tr>
+    	<td width="30%">Số A = </td>
+    	<td width="70%"><input type="text" name="tA" id="tA"></td>
+    </tr>
+    <tr>
+    	<td width="30%">Số B = </td>
+    	<td width="70%"><input type="text" name="tB" id="tB"></td>
+    </tr>
+    <tr>
+    	<td width="30%"></td>
+    	<td width="70%" >
+        <input type="button" name="b1" id="b1" 
+        value="+" onClick="Tinh(this.value);">
+        <input type="button" name="b2" id="b2" 
+        value="-" onClick="Tinh(this.value);">
+        <input type="button" name="b3" id="3" 
+        value="*" onClick="Tinh(this.value);">
+        <input type="button" name="b4" id="b4" 
+        value="/" onClick="Tinh(this.value);">
+        </td>
+    </tr>
+    <tr>
+    	<td width="30%">Kết quả = </td>
+    	<td width="70%"><input type="text" name="tKQ" id="tKQ"></td>
+    </tr>
+</table>
+</form>
+</body>
+</html>
